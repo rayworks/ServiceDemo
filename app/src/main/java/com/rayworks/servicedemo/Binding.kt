@@ -68,7 +68,8 @@ class Binding : AppCompatActivity() {
             // connected to it.
             try {
                 mService?.registerCallback(mCallback)
-            } catch (e: RemoteException) { // In this case the service has crashed before we could even
+            } catch (e: RemoteException) {
+                // In this case the service has crashed before we could even
                 // do anything with it; we can count on soon being
                 // disconnected (and then reconnected if it can be restarted)
                 // so there is no need to do anything here.
@@ -132,12 +133,14 @@ class Binding : AppCompatActivity() {
 
     private val mUnbindListener =
         View.OnClickListener {
-            if (mIsBound) { // If we have received the service, and hence registered with
+            if (mIsBound) {
+                // If we have received the service, and hence registered with
                 // it, then now is the time to unregister.
                 if (mService != null) {
                     try {
                         mService!!.unregisterCallback(mCallback)
-                    } catch (e: RemoteException) { // There is nothing special we need to do if the service
+                    } catch (e: RemoteException) {
+                        // There is nothing special we need to do if the service
                         // has crashed.
                     }
                 }

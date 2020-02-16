@@ -48,14 +48,14 @@ class RemoteService : Service() {
         return START_NOT_STICKY
     }
 
-    override fun onDestroy() { // Cancel the persistent notification.
+    override fun onDestroy() {
+        // Cancel the persistent notification.
         mNM.cancel(R.string.remote_service_started)
         // Tell the user we stopped.
         Toast.makeText(this, R.string.remote_service_stopped, Toast.LENGTH_SHORT).show()
         // Unregister all callbacks.
         mCallbacks.kill()
-        // Remove the next pending message to increment the counter, stopping
-        // the increment loop.
+        // Remove the next pending message to increment the counter, stopping the increment loop.
         mHandler.removeMessages(REPORT_MSG)
     }
 
@@ -139,7 +139,8 @@ class RemoteService : Service() {
     /**
      * Show a notification while this service is running.
      */
-    private fun showNotification() { // In this sample, we'll use the same text for the ticker and the expanded notification
+    private fun showNotification() {
+        // In this sample, we'll use the same text for the ticker and the expanded notification
         val text = getText(R.string.remote_service_started)
         // The PendingIntent to launch our activity if the user selects this notification
         val contentIntent = PendingIntent.getActivity(
