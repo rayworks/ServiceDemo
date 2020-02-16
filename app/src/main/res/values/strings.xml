@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ServiceDemo</string>
+    <string name="remote_service_started">remote service started</string>
+    <string name="remote_service_label">"Remote service"</string>
+    <string name="remote_service_stopped">stopped</string>
+    <string name="remote_service_controller">Remote service controller</string>
+    <string name="start_service">start</string>
+    <string name="stop_service">stop</string>
+    <string name="remote_service_binding">remote service binding</string>
+    <string name="bind_service">bind</string>
+    <string name="remote_call_failed">remote call failed</string>
+    <string name="unbind_service">unbind</string>
+    <string name="remote_service_disconnected">svc disconnected</string>
+    <string name="remote_service_connected">svc connected</string>
+    <string name="kill_process">kill process</string>
+</resources>
